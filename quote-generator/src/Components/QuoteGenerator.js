@@ -6,6 +6,7 @@ export default class QuoteGenerator extends React.Component {
     this.state = {
       quote: '',
       author: '',
+      color: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,6 +17,7 @@ export default class QuoteGenerator extends React.Component {
     this.setState({
       quote: '',
       author: '',
+      color: '',
     });
   }
 
@@ -37,38 +39,63 @@ export default class QuoteGenerator extends React.Component {
       {
         quote: 'The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.',
         author: 'Winston Churchill',
-      }
+      },
+      {
+        quote: 'Don\'t be afraid to give up the good to go for the great.',
+        author: 'John D. Rockefeller',
+      },
     ]
+
+    const colors = [
+      '#16a085',
+      '#27ae60',
+      '#2c3e50',
+      '#f39c12',
+      '#e74c3c',
+      '#9b59b6',
+      '#FB6964',
+      '#342224',
+      '#472E32',
+      '#BDBB99',
+      '#77B1A9',
+      '#73A857'
+    ]
+   
     const selectedQuote = quotes[Math.floor(Math.random() * quotes.length)];
     const quote = selectedQuote.quote;
     const author = selectedQuote.author;
+
+    const selectedColor = colors[Math.floor(Math.random() * colors.length)];
+    const color = selectedColor;
     
     return (
       <div className="container-fluid">
-        <div className="container card w-50 p-3 position-absolute top-50 start-50 translate-middle" id="quote-box">
-          <div className="card-body">
-            <div className="row">
-              <div className="col">
-                <i class="fas fa-quote-left fs-1 me-2"></i><span className="fs-2" id="text" >{quote}</span>
+        <div style={{backgroundColor: color}} id="body">
+          <div className="container card w-50 p-3 position-absolute top-50 start-50 translate-middle" id="quote-box">
+            <div className="card-body">
+              <div className="row">
+                <div className="col">
+                  <i className="fas fa-quote-left fs-1 me-2"></i><span className="fs-2" id="text" >{quote}</span>
+                </div>
               </div>
+              <div className="row">
+                <div className="col">
+                  <p className="fs-5 text-end" id="author">- {author}</p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                <a href="twitter.com/intent/tweet" id="tweet-quote">
+                  <button className="btn" style={{backgroundColor: color}}>
+                  <i className="fab fa-twitter fs-4 text-white"></i>
+                  </button>
+                </a>
+                </div>
+                <div className="col text-end">
+                  <button className="btn text-white" style={{backgroundColor: color}} id="new-quote" onClick={this.handleSubmit}>New Quote</button>
+                </div>
+              </div>        
             </div>
-            <div className="row">
-              <div className="col">
-                <p className="fs-5 text-end" id="author">- {author}</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-              <a href="twitter.com/intent/tweet" id="tweet-quote">
-                <button className="btn btn-info">
-                <i className="fab fa-twitter fs-4 text-white"></i>
-                </button>
-              </a>
-              </div>
-              <div className="col text-end">
-                <button className="btn btn-info text-white" id="new-quote" onClick={this.handleSubmit}>New</button>
-              </div>
-            </div>        
           </div>
         </div>
       </div>
