@@ -85,12 +85,11 @@ export default class QuoteGenerator extends React.Component {
               </div>
               <div className="row">
                 <div className="col">
-                <a href="twitter.com/intent/tweet" id="tweet-quote">
-                  <button className="btn" style={{backgroundColor: color}}>
-                  <i className="fab fa-twitter fs-4 text-white"></i>
+                  <button className="btn text-white" onClick={() => {navigator.clipboard.writeText(quote + ' - ' + author)}}
+style={{backgroundColor: color}}> 
+                  Copy
                   </button>
-                </a>
-                </div>
+                </div> 
                 <div className="col text-end">
                   <button className="btn text-white" style={{backgroundColor: color}} id="new-quote" onClick={this.handleSubmit}>New Quote</button>
                 </div>
