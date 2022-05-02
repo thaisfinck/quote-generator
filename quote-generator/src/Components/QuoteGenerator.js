@@ -70,7 +70,7 @@ export default class QuoteGenerator extends React.Component {
     
     return (
       <div className="container-fluid">
-        <div style={{backgroundColor: color}} id="body">
+        <div style={{ height: "100vh", backgroundColor: color}} id="body">
           <div className="container card w-50 p-3 position-absolute top-50 start-50 translate-middle" id="quote-box">
             <div className="card-body">
               <div className="row">
