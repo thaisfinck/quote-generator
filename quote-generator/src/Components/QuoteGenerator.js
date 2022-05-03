@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 
 export default class QuoteGenerator extends React.Component {
   constructor(props) {
@@ -27,22 +28,27 @@ export default class QuoteGenerator extends React.Component {
       {
         quote: 'I\'m selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can\'t handle me at my worst, then you sure as hell don\'t deserve me at my best.',
         author: 'Marilyn Monroe',
+
       },
       {
         quote: 'Get busy living or get busy dying.',
         author: 'Stephen King',
+
       },
        {
         quote: 'The way to get started is to quit talking and begin doing.',
         author: 'Walt Disney',
+
       },
       {
         quote: 'The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.',
         author: 'Winston Churchill',
+
       },
       {
         quote: 'Don\'t be afraid to give up the good to go for the great.',
         author: 'John D. Rockefeller',
+
       },
     ]
 
@@ -76,6 +82,7 @@ export default class QuoteGenerator extends React.Component {
               <div className="row">
                 <div className="col">
                   <i className="fas fa-quote-left fs-1 me-2"></i><span className="fs-2" id="text" >{quote}</span>
+
                 </div>
               </div>
               <div className="row">
