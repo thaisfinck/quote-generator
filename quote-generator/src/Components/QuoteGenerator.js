@@ -50,6 +50,10 @@ export default class QuoteGenerator extends React.Component {
         author: 'John D. Rockefeller',
 
       },
+      {
+        quote: 'The best and most beautiful things in the world cannot be seen, nor touched, nor known, they are only memory.',
+        author: 'Claude Monet',
+      },
     ]
 
     const colors = [
